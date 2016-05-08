@@ -4,26 +4,32 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>git rebase�÷� | Hexo</title>
+    <title>git rebase用法 | Hexo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="[object Object]">
     
 
     
-    <meta name="description" content="git ����֮git rebase �÷�
-  �����ύ�Ĵ����󣬹���Ա���֣����Ĵ��벻���ύ���������ϣ���Ҫԭ�����ڣ�����commit �кͷ������е���Щcommit����ͬһʱ�����ϣ�����������ЩcommitҪ���뵽�������е�ĳЩcommit֮�䣬�����ͻ����ɴ����ĳ�ͻ����������ʱ��">
+    <meta name="description" content="git 命令之git rebase 用法
+  当你提交的代码后，管理员发现，您的代码不能提交到服务器上，主要原因在于，你的commit 中和服务器中的有些commit不再同一时间轴上，即：你的有些commit要插入到服务器中的某些commit之间，这样就会造成代码的冲突。所以这个时候就要使用Git rebase， git rebase用于把一个分支的修改合并到当前分支。  
+
+新建一个分支，并且代">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git rebase�÷�">
+<meta property="og:title" content="git rebase用法">
 <meta property="og:url" content="http://yoursite.com/2016/05/08/git-rebase/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="git ����֮git rebase �÷�
-  �����ύ�Ĵ����󣬹���Ա���֣����Ĵ��벻���ύ���������ϣ���Ҫԭ�����ڣ�����commit �кͷ������е���Щcommit����ͬһʱ�����ϣ�����������ЩcommitҪ���뵽�������е�ĳЩcommit֮�䣬�����ͻ����ɴ����ĳ�ͻ����������ʱ��">
-<meta property="og:updated_time" content="2016-05-08T15:31:09.757Z">
+<meta property="og:description" content="git 命令之git rebase 用法
+  当你提交的代码后，管理员发现，您的代码不能提交到服务器上，主要原因在于，你的commit 中和服务器中的有些commit不再同一时间轴上，即：你的有些commit要插入到服务器中的某些commit之间，这样就会造成代码的冲突。所以这个时候就要使用Git rebase， git rebase用于把一个分支的修改合并到当前分支。  
+
+新建一个分支，并且代">
+<meta property="og:updated_time" content="2016-05-08T15:40:28.046Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git rebase�÷�">
-<meta name="twitter:description" content="git ����֮git rebase �÷�
-  �����ύ�Ĵ����󣬹���Ա���֣����Ĵ��벻���ύ���������ϣ���Ҫԭ�����ڣ�����commit �кͷ������е���Щcommit����ͬһʱ�����ϣ�����������ЩcommitҪ���뵽�������е�ĳЩcommit֮�䣬�����ͻ����ɴ����ĳ�ͻ����������ʱ��">
+<meta name="twitter:title" content="git rebase用法">
+<meta name="twitter:description" content="git 命令之git rebase 用法
+  当你提交的代码后，管理员发现，您的代码不能提交到服务器上，主要原因在于，你的commit 中和服务器中的有些commit不再同一时间轴上，即：你的有些commit要插入到服务器中的某些commit之间，这样就会造成代码的冲突。所以这个时候就要使用Git rebase， git rebase用于把一个分支的修改合并到当前分支。  
+
+新建一个分支，并且代">
 
     
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -82,7 +88,7 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/05/08/git-rebase/" title="git rebase�÷�" itemprop="url">git rebase�÷�</a>
+      <a href="/2016/05/08/git-rebase/" title="git rebase用法" itemprop="url">git rebase用法</a>
   </h1>
   <p class="article-author">By
        
@@ -98,41 +104,41 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git-����֮git-rebase-�÷�"><span class="toc-number">1.</span> <span class="toc-text">git ����֮git rebase �÷�</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git-命令之git-rebase-用法"><span class="toc-number">1.</span> <span class="toc-text">git 命令之git rebase 用法</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="git-����֮git-rebase-�÷�"><a href="#git-����֮git-rebase-�÷�" class="headerlink" title="git ����֮git rebase �÷�"></a>git ����֮git rebase �÷�</h1><hr>
-<p>  �����ύ�Ĵ����󣬹���Ա���֣����Ĵ��벻���ύ���������ϣ���Ҫԭ�����ڣ�����commit �кͷ������е���Щcommit����ͬһʱ�����ϣ�����������ЩcommitҪ���뵽�������е�ĳЩcommit֮�䣬�����ͻ����ɴ����ĳ�ͻ����������ʱ����Ҫʹ��Git rebase�� git rebase���ڰ�һ����֧���޸ĺϲ�����ǰ��֧��  </p>
+		<h1 id="git-命令之git-rebase-用法"><a href="#git-命令之git-rebase-用法" class="headerlink" title="git 命令之git rebase 用法"></a>git 命令之git rebase 用法</h1><hr>
+<p>  当你提交的代码后，管理员发现，您的代码不能提交到服务器上，主要原因在于，你的commit 中和服务器中的有些commit不再同一时间轴上，即：你的有些commit要插入到服务器中的某些commit之间，这样就会造成代码的冲突。所以这个时候就要使用Git rebase， git rebase用于把一个分支的修改合并到当前分支。  </p>
 <ol>
-<li><p>�½�һ����֧�����Ҵ����ͷ������д���ͬ��</p>
+<li><p>新建一个分支，并且代码和服务器中代码同步</p>
 <p>git checkout origin/v2.0 -b temp  </p>
 </li>
-<li><p>Ϊ�˱�֤�½���temp��֧���������µģ����Զ�ִ������һ��</p>
+<li><p>为了保证新建的temp分支代码是最新的，可以多执行下面一步</p>
 <p>git pull</p>
 </li>
-<li><p>�����½���֧����ϵͳ���Զ�checkout��temp��֧�ϣ���ʱ</p>
+<li><p>当你新建分支后，系统会自动checkout到temp分支上，此时</p>
 <p>git checkout  new  </p>
 </li>
-<li><p>�ϲ����룬������</p>
+<li><p>合并代码，并整理</p>
 <p>git rebase  temp  </p>
 </li>
-<li><p>��Ϊ˳�������������ģ����Կ϶������ֳ�ͻ</p>
+<li><p>因为顺序是重新整理的，所以肯定会出现冲突</p>
 </li>
-<li><p>������ͻ������ git add * ��������Ҫgit commit</p>
+<li><p>解决冲突，最后 git add * ，但不许要git commit</p>
 </li>
-<li><p>��������ִ�� git rebase –continue</p>
+<li><p>解决后，执行 git rebase –continue</p>
 </li>
-<li><p>�����ύ���룺 git push  </p>
+<li><p>重新提交代码： git push  </p>
 </li>
 </ol>
-<p>������ͻ  </p>
-<p>��rebase�Ĺ����У�Ҳ�������ֳ�ͻ(conflict). ������������Git��ֹͣrebase��������ȥ���� ��ͻ���ڽ�������ͻ������”git-add”����ȥ������Щ���ݵ�����(index), Ȼ����������ִ�� git-commit,ֻҪִ��:   </p>
+<p>解决冲突  </p>
+<p>在rebase的过程中，也许会出现冲突(conflict). 在这种情况，Git会停止rebase并会让你去解决 冲突；在解决完冲突后，用”git-add”命令去更新这些内容的索引(index), 然后，你无需执行 git-commit,只要执行:   </p>
 <blockquote>
 <p>$ git rebase –continue </p>
 </blockquote>
-<p>����git������Ӧ��(apply)���µĲ�����<br>���κ�ʱ������������–abort��������ֹrebase���ж�������”new” ��֧���ص�rebase��ʼǰ��״̬��<br>$ git rebase –abort<br>����Ҫ�����ϲ�<br>git rebase �Cskip</p>
-<p>  ������ʹ��git pull������ʱ�򣬿���ʹ��–rebase��������git pull –rebase,������ʾ�����ı��ص�ǰ��֧����ÿ���ύ(commit)ȡ���������Ұ�������ʱ ����Ϊ����(patch)(��Щ�����ŵ�”.git/rebase”Ŀ¼��),Ȼ���ѱ��ص�ǰ��֧���� Ϊ���µ�”origin”��֧�������ѱ�������Щ����Ӧ�õ����ص�ǰ��֧�ϡ�   </p>
+<p>这样git会继续应用(apply)余下的补丁。<br>在任何时候，你可以用–abort参数来终止rebase的行动，并且”new” 分支会回到rebase开始前的状态。<br>$ git rebase –abort<br>假如要跳过合并<br>git rebase –skip</p>
+<p>  我们在使用git pull命令的时候，可以使用–rebase参数，即git pull –rebase,这里表示把你的本地当前分支里的每个提交(commit)取消掉，并且把它们临时 保存为补丁(patch)(这些补丁放到”.git/rebase”目录中),然后把本地当前分支更新 为最新的”origin”分支，最后把保存的这些补丁应用到本地当前分支上。   </p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -150,7 +156,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2016/05/08/git-rebase/" data-title="git rebase�÷� | Hexo" data-tsina="5111832329" class="share clearfix">
+	  <div data-url="http://yoursite.com/2016/05/08/git-rebase/" data-title="git rebase用法 | Hexo" data-tsina="5111832329" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -165,9 +171,9 @@
  
 
 <div class="next">
-<a href="/2016/04/26/hello-world/"  title="Hello World">
+<a href="/2016/05/08/git-rebase1/"  title="git rebase�÷�">
  <strong>下一篇：</strong><br/> 
- <span>Hello World
+ <span>git rebase�÷�
 </span>
 </a>
 </div>
@@ -176,7 +182,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/05/08/git-rebase/" data-title="git rebase�÷�" data-url="http://yoursite.com/2016/05/08/git-rebase/"></div>
+	<div class="ds-thread" data-thread-key="2016/05/08/git-rebase/" data-title="git rebase用法" data-url="http://yoursite.com/2016/05/08/git-rebase/"></div>
 </section>
 
 
@@ -192,7 +198,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git-����֮git-rebase-�÷�"><span class="toc-number">1.</span> <span class="toc-text">git ����֮git rebase �÷�</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git-命令之git-rebase-用法"><span class="toc-number">1.</span> <span class="toc-text">git 命令之git rebase 用法</span></a></li></ol>
  
   </div>
 
@@ -218,7 +224,7 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/git-rebase/" title="git rebase">git rebase<sup>1</sup></a></li>
+				<li><a href="/tags/git-rebase/" title="git rebase">git rebase<sup>2</sup></a></li>
 			
 		
 			
