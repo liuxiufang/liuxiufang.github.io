@@ -4,29 +4,29 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>git rebase用法 | Hexo</title>
+    <title>laravel中简单输出&quot;N分钟前&quot;、&quot;几天前&quot;的时间 | Hexo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="[object Object]">
     
 
     
-    <meta name="description" content="git 命令之git rebase 用法  当你提交的代码后，管理员发现，您的代码不能提交到服务器上，主要原因在于，你的commit 中和服务器中的有些commit不再同一时间轴上，即：你的有些commit要插入到服务器中的某些commit之间，这样就会造成代码的冲突。所以这个时候就要使用Git rebase， git rebase用于把一个分支的修改合并到当前分支。  
-
-新建一个分支，并且代码">
+    <meta name="description" content="我们会经常遇到这样的情况，比如将我们的发布时间显示为’几分钟前’,’几天前’这种time ago的格式哪在laravel中我们如何做到呢?
+  第一步： 在app/Providers/AppServiceProvider.php 中设置地区：  
+1234public function boot()  &amp;#123;       \Carbon\Carbon::setLocale(&apos;zh&apos;);">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git rebase用法">
-<meta property="og:url" content="http://yoursite.com/2016/05/08/git-rebase/index.html">
+<meta property="og:title" content="laravel中简单输出"N分钟前"、"几天前"的时间">
+<meta property="og:url" content="http://yoursite.com/2016/05/09/laravel-time/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="git 命令之git rebase 用法  当你提交的代码后，管理员发现，您的代码不能提交到服务器上，主要原因在于，你的commit 中和服务器中的有些commit不再同一时间轴上，即：你的有些commit要插入到服务器中的某些commit之间，这样就会造成代码的冲突。所以这个时候就要使用Git rebase， git rebase用于把一个分支的修改合并到当前分支。  
-
-新建一个分支，并且代码">
-<meta property="og:updated_time" content="2016-05-08T15:46:08.699Z">
+<meta property="og:description" content="我们会经常遇到这样的情况，比如将我们的发布时间显示为’几分钟前’,’几天前’这种time ago的格式哪在laravel中我们如何做到呢?
+  第一步： 在app/Providers/AppServiceProvider.php 中设置地区：  
+1234public function boot()  &amp;#123;       \Carbon\Carbon::setLocale(&apos;zh&apos;);">
+<meta property="og:updated_time" content="2016-05-09T07:23:49.503Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git rebase用法">
-<meta name="twitter:description" content="git 命令之git rebase 用法  当你提交的代码后，管理员发现，您的代码不能提交到服务器上，主要原因在于，你的commit 中和服务器中的有些commit不再同一时间轴上，即：你的有些commit要插入到服务器中的某些commit之间，这样就会造成代码的冲突。所以这个时候就要使用Git rebase， git rebase用于把一个分支的修改合并到当前分支。  
-
-新建一个分支，并且代码">
+<meta name="twitter:title" content="laravel中简单输出"N分钟前"、"几天前"的时间">
+<meta name="twitter:description" content="我们会经常遇到这样的情况，比如将我们的发布时间显示为’几分钟前’,’几天前’这种time ago的格式哪在laravel中我们如何做到呢?
+  第一步： 在app/Providers/AppServiceProvider.php 中设置地区：  
+1234public function boot()  &amp;#123;       \Carbon\Carbon::setLocale(&apos;zh&apos;);">
 
     
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -85,14 +85,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/05/08/git-rebase/" title="git rebase用法" itemprop="url">git rebase用法</a>
+      <a href="/2016/05/09/laravel-time/" title="laravel中简单输出&quot;N分钟前&quot;、&quot;几天前&quot;的时间" itemprop="url">laravel中简单输出&quot;N分钟前&quot;、&quot;几天前&quot;的时间</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="[object Object]" target="_blank" itemprop="author">[object Object]</a>
 		
   <p class="article-time">
-    <time datetime="2016-05-08T08:35:42.000Z" itemprop="datePublished"> Published 2016-05-08</time>
+    <time datetime="2016-05-09T07:15:42.000Z" itemprop="datePublished"> Published 2016-05-09</time>
     
   </p>
 </header>
@@ -101,40 +101,18 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git-命令之git-rebase-用法"><span class="toc-number">1.</span> <span class="toc-text">git 命令之git rebase 用法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#解决冲突"><span class="toc-number">2.</span> <span class="toc-text">解决冲突</span></a></li></ol>
+			
 		
 		</div>
 		
-		<h1 id="git-命令之git-rebase-用法"><a href="#git-命令之git-rebase-用法" class="headerlink" title="git 命令之git rebase 用法"></a>git 命令之git rebase 用法</h1><p>  当你提交的代码后，管理员发现，您的代码不能提交到服务器上，主要原因在于，你的commit 中和服务器中的有些commit不再同一时间轴上，即：你的有些commit要插入到服务器中的某些commit之间，这样就会造成代码的冲突。所以这个时候就要使用Git rebase， git rebase用于把一个分支的修改合并到当前分支。  </p>
-<ol>
-<li><p>新建一个分支，并且代码和服务器中代码同步</p>
-<p>git checkout origin -b temp  </p>
-</li>
-<li><p>为了保证新建的temp分支代码是最新的，可以多执行下面一步</p>
-<p>git pull</p>
-</li>
-<li><p>当你新建分支后，系统会自动checkout到temp分支上，此时</p>
-<p>git checkout  temp  </p>
-</li>
-<li><p>合并代码，并整理</p>
-<p>git rebase  temp  </p>
-</li>
-<li><p>因为顺序是重新整理的，所以肯定会出现冲突</p>
-</li>
-<li><p>解决冲突，最后 git add * ，但不许要git commit</p>
-</li>
-<li><p>解决后，执行 git rebase –continue</p>
-</li>
-<li><p>重新提交代码： git push  </p>
-</li>
-</ol>
-<h1 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h1><p> 在rebase的过程中，也许会出现冲突(conflict). 在这种情况，Git会停止rebase并会让你去解决 冲突；在解决完冲突后，用”git-add”命令去更新这些内容的索引(index), 然后，你无需执行 git-commit,只要执行:   </p>
-<blockquote>
-<p>$ git rebase –continue </p>
-</blockquote>
-<p>这样git会继续应用(apply)余下的补丁。<br>在任何时候，你可以用–abort参数来终止rebase的行动，并且”new” 分支会回到rebase开始前的状态。<br>$ git rebase –abort<br>假如要跳过合并<br>git rebase –skip</p>
-<p>  我们在使用git pull命令的时候，可以使用–rebase参数，即git pull –rebase,这里表示把你的本地当前分支里的每个提交(commit)取消掉，并且把它们临时 保存为补丁(patch)(这些补丁放到”.git/rebase”目录中),然后把本地当前分支更新 为最新的”origin”分支，最后把保存的这些补丁应用到本地当前分支上。   </p>
-  
+		<p>  我们会经常遇到这样的情况，比如将我们的发布时间显示为’几分钟前’,’几天前’这种time ago的格式哪在laravel中我们如何做到呢?</p>
+<p>  第一步： 在app/Providers/AppServiceProvider.php 中设置地区：  </p>
+<pre><code><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">boot</span><span class="params">()</span>  </span><br><span class="line"></span>&#123;  </span><br><span class="line">     \Carbon\Carbon::setLocale(<span class="string">'zh'</span>);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p> 第二步： 模板中使用Carbon的diffForHumans方法来显示时间</p>
+<pre><code>{{ $comment->created_at->diffForHumans() }} // 3小时前
+
+{{ $comment->created_at->diffForHumans() }} // 5天前
+</code></pre>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -142,7 +120,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/git-rebase/">git rebase</a>
+  <span></span> <a href="/tags/laravel-time/">laravel-time</a>
   </div>
 
 </div>
@@ -151,7 +129,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2016/05/08/git-rebase/" data-title="git rebase用法 | Hexo" data-tsina="5111832329" class="share clearfix">
+	  <div data-url="http://yoursite.com/2016/05/09/laravel-time/" data-title="laravel中简单输出&quot;N分钟前&quot;、&quot;几天前&quot;的时间 | Hexo" data-tsina="5111832329" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -164,19 +142,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/05/09/laravel-time/" title="laravel中简单输出&quot;N分钟前&quot;、&quot;几天前&quot;的时间">
-  <strong>上一篇：</strong><br/>
-  <span>
-  laravel中简单输出&quot;N分钟前&quot;、&quot;几天前&quot;的时间</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/04/26/hello-world/"  title="Hello World">
+<a href="/2016/05/08/git-rebase/"  title="git rebase用法">
  <strong>下一篇：</strong><br/> 
- <span>Hello World
+ <span>git rebase用法
 </span>
 </a>
 </div>
@@ -185,7 +155,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/05/08/git-rebase/" data-title="git rebase用法" data-url="http://yoursite.com/2016/05/08/git-rebase/"></div>
+	<div class="ds-thread" data-thread-key="2016/05/09/laravel-time/" data-title="laravel中简单输出"N分钟前"、"几天前"的时间" data-url="http://yoursite.com/2016/05/09/laravel-time/"></div>
 </section>
 
 
@@ -201,7 +171,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git-命令之git-rebase-用法"><span class="toc-number">1.</span> <span class="toc-text">git 命令之git rebase 用法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#解决冲突"><span class="toc-number">2.</span> <span class="toc-text">解决冲突</span></a></li></ol>
+ 
  
   </div>
 
