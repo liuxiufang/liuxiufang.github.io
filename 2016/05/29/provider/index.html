@@ -4,29 +4,26 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>git rebase用法 | Hexo</title>
+    <title>Hexo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="[object Object]">
     
 
     
-    <meta name="description" content="git 命令之git rebase 用法  当你提交的代码后，管理员发现，您的代码不能提交到服务器上，主要原因在于，你的commit 中和服务器中的有些commit不再同一时间轴上，即：你的有些commit要插入到服务器中的某些commit之间，这样就会造成代码的冲突。所以这个时候就要使用Git rebase， git rebase用于把一个分支的修改合并到当前分支。  
-
-新建一个分支，并且代码">
+    <meta name="description" content="AngularJs依赖注入怎么说呢，依赖注入是当今框架中的流行元素，依赖注入它是一种软件设计模式，是处理如果让写的程序来得到相应的依赖引用的，通过依赖注入可以有助于代码的维护和测试，对于代码的质量和可重用性得到相当大的提升。  
+简单的来说，当ng提供服务的过程当中，就会涉及到依赖注入机制，借助于 provider来提供操作，它是被“注入控制器”使用的一个对象，注入机制通过调用一个provider">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git rebase用法">
-<meta property="og:url" content="http://yoursite.com/2016/05/08/git-rebase/index.html">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2016/05/29/provider/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="git 命令之git rebase 用法  当你提交的代码后，管理员发现，您的代码不能提交到服务器上，主要原因在于，你的commit 中和服务器中的有些commit不再同一时间轴上，即：你的有些commit要插入到服务器中的某些commit之间，这样就会造成代码的冲突。所以这个时候就要使用Git rebase， git rebase用于把一个分支的修改合并到当前分支。  
-
-新建一个分支，并且代码">
-<meta property="og:updated_time" content="2016-05-08T15:46:08.699Z">
+<meta property="og:description" content="AngularJs依赖注入怎么说呢，依赖注入是当今框架中的流行元素，依赖注入它是一种软件设计模式，是处理如果让写的程序来得到相应的依赖引用的，通过依赖注入可以有助于代码的维护和测试，对于代码的质量和可重用性得到相当大的提升。  
+简单的来说，当ng提供服务的过程当中，就会涉及到依赖注入机制，借助于 provider来提供操作，它是被“注入控制器”使用的一个对象，注入机制通过调用一个provider">
+<meta property="og:updated_time" content="2016-05-29T15:26:40.184Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git rebase用法">
-<meta name="twitter:description" content="git 命令之git rebase 用法  当你提交的代码后，管理员发现，您的代码不能提交到服务器上，主要原因在于，你的commit 中和服务器中的有些commit不再同一时间轴上，即：你的有些commit要插入到服务器中的某些commit之间，这样就会造成代码的冲突。所以这个时候就要使用Git rebase， git rebase用于把一个分支的修改合并到当前分支。  
-
-新建一个分支，并且代码">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="AngularJs依赖注入怎么说呢，依赖注入是当今框架中的流行元素，依赖注入它是一种软件设计模式，是处理如果让写的程序来得到相应的依赖引用的，通过依赖注入可以有助于代码的维护和测试，对于代码的质量和可重用性得到相当大的提升。  
+简单的来说，当ng提供服务的过程当中，就会涉及到依赖注入机制，借助于 provider来提供操作，它是被“注入控制器”使用的一个对象，注入机制通过调用一个provider">
 
     
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -85,14 +82,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/05/08/git-rebase/" title="git rebase用法" itemprop="url">git rebase用法</a>
+      <a href="/2016/05/29/provider/" title="" itemprop="url"></a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="[object Object]" target="_blank" itemprop="author">[object Object]</a>
 		
   <p class="article-time">
-    <time datetime="2016-05-08T08:35:42.000Z" itemprop="datePublished"> 发表于 2016-05-08</time>
+    <time datetime="2016-05-29T14:57:23.871Z" itemprop="datePublished"> 发表于 2016-05-29</time>
     
   </p>
 </header>
@@ -101,49 +98,39 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git-命令之git-rebase-用法"><span class="toc-number">1.</span> <span class="toc-text">git 命令之git rebase 用法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#解决冲突"><span class="toc-number">2.</span> <span class="toc-text">解决冲突</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#AngularJs依赖注入"><span class="toc-number">1.</span> <span class="toc-text">AngularJs依赖注入</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="git-命令之git-rebase-用法"><a href="#git-命令之git-rebase-用法" class="headerlink" title="git 命令之git rebase 用法"></a>git 命令之git rebase 用法</h1><p>  当你提交的代码后，管理员发现，您的代码不能提交到服务器上，主要原因在于，你的commit 中和服务器中的有些commit不再同一时间轴上，即：你的有些commit要插入到服务器中的某些commit之间，这样就会造成代码的冲突。所以这个时候就要使用Git rebase， git rebase用于把一个分支的修改合并到当前分支。  </p>
-<ol>
-<li><p>新建一个分支，并且代码和服务器中代码同步</p>
-<p>git checkout origin -b temp  </p>
-</li>
-<li><p>为了保证新建的temp分支代码是最新的，可以多执行下面一步</p>
-<p>git pull</p>
-</li>
-<li><p>当你新建分支后，系统会自动checkout到temp分支上，此时</p>
-<p>git checkout  temp  </p>
-</li>
-<li><p>合并代码，并整理</p>
-<p>git rebase  temp  </p>
-</li>
-<li><p>因为顺序是重新整理的，所以肯定会出现冲突</p>
-</li>
-<li><p>解决冲突，最后 git add * ，但不许要git commit</p>
-</li>
-<li><p>解决后，执行 git rebase –continue</p>
-</li>
-<li><p>重新提交代码： git push  </p>
-</li>
-</ol>
-<h1 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h1><p> 在rebase的过程中，也许会出现冲突(conflict). 在这种情况，Git会停止rebase并会让你去解决 冲突；在解决完冲突后，用”git-add”命令去更新这些内容的索引(index), 然后，你无需执行 git-commit,只要执行:   </p>
-<blockquote>
-<p>$ git rebase –continue </p>
-</blockquote>
-<p>这样git会继续应用(apply)余下的补丁。<br>在任何时候，你可以用–abort参数来终止rebase的行动，并且”new” 分支会回到rebase开始前的状态。<br>$ git rebase –abort<br>假如要跳过合并<br>git rebase –skip</p>
-<p>  我们在使用git pull命令的时候，可以使用–rebase参数，即git pull –rebase,这里表示把你的本地当前分支里的每个提交(commit)取消掉，并且把它们临时 保存为补丁(patch)(这些补丁放到”.git/rebase”目录中),然后把本地当前分支更新 为最新的”origin”分支，最后把保存的这些补丁应用到本地当前分支上。   </p>
+		<h2 id="AngularJs依赖注入"><a href="#AngularJs依赖注入" class="headerlink" title="AngularJs依赖注入"></a>AngularJs依赖注入</h2><p>怎么说呢，依赖注入是当今框架中的流行元素，依赖注入它是一种软件设计模式，是处理如果让写的程序来得到相应的依赖引用的，通过依赖注入可以有助于代码的维护和测试，对于代码的质量和可重用性得到相当大的提升。  </p>
+<p>简单的来说，当ng提供服务的过程当中，就会涉及到依赖注入机制，借助于 provider来提供操作，它是被“注入控制器”使用的一个对象，注入机制通过调用一个provider里面的$get()方法，来把得到的内容作为参数在controller里面调用,具体的来拆分，是通过值、工厂、服务、提供者、常值来体现的。  </p>
+<p>那么下面来细细研究下依赖注入的方式体现：</p>
+<p>第一个是factory方法，工厂由$provider提供，module的factory是一个引用，通过调用$get()来进行操作。当一个服务或者控制器需要时，它通常就会派上用场，处理好的值当做参数返回给控制器。</p>
+<pre><code class="php">
+<span class="keyword">var</span> app = angular.module(<span class="string">'myApp'</span>, [], <span class="function"><span class="keyword">function</span><span class="params">($provide)</span></span>{
+  $provide.factory(<span class="string">'PP'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+    <span class="keyword">return</span> {<span class="string">'hello'</span>: <span class="string">'123'</span>};
+  });
+});
+app.controller(<span class="string">'TestController'</span>, <span class="function"><span class="keyword">function</span><span class="params">($scope, PP)</span></span>{ console.log(PP) });
+</code></pre>
+<p>第二个事service方法，也是由$provider提供，但是这个和factory存在不同之处，他需要提供一个构造方法，来操作，但是factory可以是一个数字或者字符串。  </p>
+<pre><code class="php">
+<span class="keyword">var</span> app = angular.module(<span class="string">'myApp'</span>, [], <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{ });
+app.service = <span class="function"><span class="keyword">function</span><span class="params">(name, constructor)</span></span>{
+  app.factory(name, <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+    <span class="keyword">return</span> (<span class="keyword">new</span> constructor());
+  });
+}
+</code></pre>
+<p>angular 使用这种注入方式，并不要求方法变量与注入名称完全相同，调用的时候会按顺序赋值然后调用就行。 </p>
+<p>通过上面的例子还会有人困惑，既然factorry和value能够节省那么多的代码，为什么还有人要使用provider，答案是provider允许我们进行一些配置。在前面我们已经提到过当你通过provider（或者其他简写方法）创建一个服务时，你实际上创建了一个新的provider，它将定义你的服务如何被创建。我们没有提到的是，这些provider可以被注入到config函数中，你可以和它们进行一些交互。   </p>
+<p>首先来说，AngularJS分两个阶段运行你的应用 – config阶段和run阶段。config阶段是你设置任何的provider的阶段。它也是你设置任何的指令，控制器，过滤器以及其它东西的阶段。在run阶段，AngularJS会编译你的DOM并启动你的应用。 </p>
   
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/git-rebase/">git rebase</a>
-  </div>
 
 </div>
 
@@ -151,7 +138,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2016/05/08/git-rebase/" data-title="git rebase用法 | Hexo" data-tsina="5111832329" class="share clearfix">
+	  <div data-url="http://yoursite.com/2016/05/29/provider/" data-title="Hexo" data-tsina="5111832329" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -164,19 +151,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/05/09/laravel-time/" title="laravel中简单输出&quot;N分钟前&quot;、&quot;几天前&quot;的时间">
-  <strong>上一篇：</strong><br/>
-  <span>
-  laravel中简单输出&quot;N分钟前&quot;、&quot;几天前&quot;的时间</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/04/26/hello-world/"  title="Hello World">
+<a href="/2016/05/09/laravel-time/"  title="laravel中简单输出&quot;N分钟前&quot;、&quot;几天前&quot;的时间">
  <strong>下一篇：</strong><br/> 
- <span>Hello World
+ <span>laravel中简单输出&quot;N分钟前&quot;、&quot;几天前&quot;的时间
 </span>
 </a>
 </div>
@@ -185,7 +164,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/05/08/git-rebase/" data-title="git rebase用法" data-url="http://yoursite.com/2016/05/08/git-rebase/"></div>
+	<div class="ds-thread" data-thread-key="2016/05/29/provider/" data-title="" data-url="http://yoursite.com/2016/05/29/provider/"></div>
 </section>
 
 
@@ -201,7 +180,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git-命令之git-rebase-用法"><span class="toc-number">1.</span> <span class="toc-text">git 命令之git rebase 用法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#解决冲突"><span class="toc-number">2.</span> <span class="toc-text">解决冲突</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#AngularJs依赖注入"><span class="toc-number">1.</span> <span class="toc-text">AngularJs依赖注入</span></a></li></ol>
  
   </div>
 
