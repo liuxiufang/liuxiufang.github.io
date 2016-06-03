@@ -4,26 +4,29 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Hexo</title>
+    <title>nginx rewrite | Hexo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="[object Object]">
     
 
     
-    <meta name="description" content="nginx rewrite$query_string现在最典型的应用就是，在跳转url时在对url做处理，location路径匹配的时候，我们通常用一个正则表达式来匹配捕捉这个路径的信息，如果一个url带有参数，针对不同的参数做rewrite，应该怎么处理呢，那么就开始用到nginx内置配置的$query_string的配置项，即$query_string等同于$args。
-首先，做几个例子来具体">
+    <meta name="description" content="$query_string现在最典型的应用就是，在跳转url时在对url做处理，location路径匹配的时候，我们通常用一个正则表达式来匹配捕捉这个路径的信息，如果一个url带有参数，针对不同的参数做rewrite，应该怎么处理呢，那么就开始用到nginx内置配置的$query_string的配置项，即$query_string等同于$args。
+首先，做几个例子来具体分析：
+rewrite ^">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="nginx rewrite">
 <meta property="og:url" content="http://yoursite.com/2016/06/03/querystring/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="nginx rewrite$query_string现在最典型的应用就是，在跳转url时在对url做处理，location路径匹配的时候，我们通常用一个正则表达式来匹配捕捉这个路径的信息，如果一个url带有参数，针对不同的参数做rewrite，应该怎么处理呢，那么就开始用到nginx内置配置的$query_string的配置项，即$query_string等同于$args。
-首先，做几个例子来具体">
-<meta property="og:updated_time" content="2016-06-02T07:59:47.270Z">
+<meta property="og:description" content="$query_string现在最典型的应用就是，在跳转url时在对url做处理，location路径匹配的时候，我们通常用一个正则表达式来匹配捕捉这个路径的信息，如果一个url带有参数，针对不同的参数做rewrite，应该怎么处理呢，那么就开始用到nginx内置配置的$query_string的配置项，即$query_string等同于$args。
+首先，做几个例子来具体分析：
+rewrite ^">
+<meta property="og:updated_time" content="2016-06-03T10:29:26.993Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="nginx rewrite$query_string现在最典型的应用就是，在跳转url时在对url做处理，location路径匹配的时候，我们通常用一个正则表达式来匹配捕捉这个路径的信息，如果一个url带有参数，针对不同的参数做rewrite，应该怎么处理呢，那么就开始用到nginx内置配置的$query_string的配置项，即$query_string等同于$args。
-首先，做几个例子来具体">
+<meta name="twitter:title" content="nginx rewrite">
+<meta name="twitter:description" content="$query_string现在最典型的应用就是，在跳转url时在对url做处理，location路径匹配的时候，我们通常用一个正则表达式来匹配捕捉这个路径的信息，如果一个url带有参数，针对不同的参数做rewrite，应该怎么处理呢，那么就开始用到nginx内置配置的$query_string的配置项，即$query_string等同于$args。
+首先，做几个例子来具体分析：
+rewrite ^">
 
     
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -82,14 +85,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/06/03/querystring/" title="" itemprop="url"></a>
+      <a href="/2016/06/03/querystring/" title="nginx rewrite" itemprop="url">nginx rewrite</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="[object Object]" target="_blank" itemprop="author">[object Object]</a>
 		
   <p class="article-time">
-    <time datetime="2016-06-03T10:15:53.203Z" itemprop="datePublished"> Published 2016-06-03</time>
+    <time datetime="2016-06-03T10:29:42.000Z" itemprop="datePublished"> Published 2016-06-03</time>
     
   </p>
 </header>
@@ -98,11 +101,11 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#nginx-rewrite"><span class="toc-number">1.</span> <span class="toc-text">nginx rewrite</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#query-string"><span class="toc-number">1.0.1.</span> <span class="toc-text">$query_string</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#loation-正则表达式"><span class="toc-number">1.0.2.</span> <span class="toc-text">loation 正则表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flag标志位"><span class="toc-number">1.0.3.</span> <span class="toc-text">flag标志位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#if指令与全局变量"><span class="toc-number">1.0.4.</span> <span class="toc-text">if指令与全局变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用的正则"><span class="toc-number">1.0.5.</span> <span class="toc-text">常用的正则</span></a></li></ol></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#query-string"><span class="toc-number">1.</span> <span class="toc-text">$query_string</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#loation-正则表达式"><span class="toc-number">2.</span> <span class="toc-text">loation 正则表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flag标志位"><span class="toc-number">3.</span> <span class="toc-text">flag标志位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#if指令与全局变量"><span class="toc-number">4.</span> <span class="toc-text">if指令与全局变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用的正则"><span class="toc-number">5.</span> <span class="toc-text">常用的正则</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="nginx-rewrite"><a href="#nginx-rewrite" class="headerlink" title="nginx rewrite"></a>nginx rewrite</h1><h3 id="query-string"><a href="#query-string" class="headerlink" title="$query_string"></a>$query_string</h3><p>现在最典型的应用就是，在跳转url时在对url做处理，location路径匹配的时候，我们通常用一个正则表达式来匹配捕捉这个路径的信息，如果一个url带有参数，针对不同的参数做rewrite，应该怎么处理呢，那么就开始用到nginx内置配置的$query_string的配置项，即$query_string等同于$args。</p>
+		<h3 id="query-string"><a href="#query-string" class="headerlink" title="$query_string"></a>$query_string</h3><p>现在最典型的应用就是，在跳转url时在对url做处理，location路径匹配的时候，我们通常用一个正则表达式来匹配捕捉这个路径的信息，如果一个url带有参数，针对不同的参数做rewrite，应该怎么处理呢，那么就开始用到nginx内置配置的$query_string的配置项，即$query_string等同于$args。</p>
 <p>首先，做几个例子来具体分析：</p>
 <p>rewrite ^/index.php?id=weibo <a href="http://www.weibo.com/" target="_blank" rel="external">http://www.weibo.com/</a>; (错误的实例)</p>
 <p>这样写跳转的话是起不了任何作用的，因为nginx会把后面的一整串都认为是url,但是在浏览器上去，只会访问到index.php这个文件，显然这种写法是不对的。</p>
@@ -229,13 +232,18 @@
 <div class="article-catetags">
 
 
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/laravel-time/">laravel-time</a>
+  </div>
+
 </div>
 
 
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2016/06/03/querystring/" data-title="Hexo" data-tsina="5111832329" class="share clearfix">
+	  <div data-url="http://yoursite.com/2016/06/03/querystring/" data-title="nginx rewrite | Hexo" data-tsina="5111832329" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -261,7 +269,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/06/03/querystring/" data-title="" data-url="http://yoursite.com/2016/06/03/querystring/"></div>
+	<div class="ds-thread" data-thread-key="2016/06/03/querystring/" data-title="nginx rewrite" data-url="http://yoursite.com/2016/06/03/querystring/"></div>
 </section>
 
 
@@ -277,7 +285,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#nginx-rewrite"><span class="toc-number">1.</span> <span class="toc-text">nginx rewrite</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#query-string"><span class="toc-number">1.0.1.</span> <span class="toc-text">$query_string</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#loation-正则表达式"><span class="toc-number">1.0.2.</span> <span class="toc-text">loation 正则表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flag标志位"><span class="toc-number">1.0.3.</span> <span class="toc-text">flag标志位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#if指令与全局变量"><span class="toc-number">1.0.4.</span> <span class="toc-text">if指令与全局变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用的正则"><span class="toc-number">1.0.5.</span> <span class="toc-text">常用的正则</span></a></li></ol></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#query-string"><span class="toc-number">1.</span> <span class="toc-text">$query_string</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#loation-正则表达式"><span class="toc-number">2.</span> <span class="toc-text">loation 正则表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flag标志位"><span class="toc-number">3.</span> <span class="toc-text">flag标志位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#if指令与全局变量"><span class="toc-number">4.</span> <span class="toc-text">if指令与全局变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用的正则"><span class="toc-number">5.</span> <span class="toc-text">常用的正则</span></a></li></ol>
  
   </div>
 
@@ -307,19 +315,19 @@
 			
 		
 			
+				<li><a href="/tags/laravel-time/" title="laravel-time">laravel-time<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/git-rebase/" title="git rebase">git rebase<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/hexo使用/" title="hexo使用">hexo使用<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/laravel-time/" title="laravel-time">laravel-time<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/git安装/" title="git安装">git安装<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/hexo使用/" title="hexo使用">hexo使用<sup>1</sup></a></li>
 			
 		
 		</ul>
