@@ -4,23 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Facades | Hexo</title>
+    <title>IOC容器、DI依赖注入、Facades解析容器 | Hexo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="[object Object]">
     
 
     
-    <meta name="description" content="#facades是什么#  Facades是一种设计模式，通常叫做外观模式，它提供了一个”static”静态接口去访问注册到IOC容器中的类，那么IOC又是什么呢？稍后再做解析，Laravel框架里面含有N多个facades，平时极多人，不研究基层构造可能都不知道到底在哪里已经用到了它，有的人说Facades就像是Laravel的静态代理方法，为IOC容器中的类服务，但是在相比传统的静态方法，在保">
+    <meta name="description" content="facades是什么  Facades是一种设计模式，通常叫做外观模式，它提供了一个”static”静态接口去访问注册到IOC容器中的类，那么IOC又是什么呢？稍后再做解析，Laravel框架里面含有N多个facades，平时极多人，不研究基层构造可能都不知道到底在哪里已经用到了它，有的人说Facades就像是Laravel的静态代理方法，为IOC容器中的类服务，但是在相比传统的静态方法，在保持了">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Facades">
+<meta property="og:title" content="IOC容器、DI依赖注入、Facades解析容器">
 <meta property="og:url" content="http://yoursite.com/2016/11/29/laravel-facade/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="#facades是什么#  Facades是一种设计模式，通常叫做外观模式，它提供了一个”static”静态接口去访问注册到IOC容器中的类，那么IOC又是什么呢？稍后再做解析，Laravel框架里面含有N多个facades，平时极多人，不研究基层构造可能都不知道到底在哪里已经用到了它，有的人说Facades就像是Laravel的静态代理方法，为IOC容器中的类服务，但是在相比传统的静态方法，在保">
-<meta property="og:updated_time" content="2016-11-29T11:34:52.519Z">
+<meta property="og:description" content="facades是什么  Facades是一种设计模式，通常叫做外观模式，它提供了一个”static”静态接口去访问注册到IOC容器中的类，那么IOC又是什么呢？稍后再做解析，Laravel框架里面含有N多个facades，平时极多人，不研究基层构造可能都不知道到底在哪里已经用到了它，有的人说Facades就像是Laravel的静态代理方法，为IOC容器中的类服务，但是在相比传统的静态方法，在保持了">
+<meta property="og:updated_time" content="2016-11-29T11:40:18.165Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Facades">
-<meta name="twitter:description" content="#facades是什么#  Facades是一种设计模式，通常叫做外观模式，它提供了一个”static”静态接口去访问注册到IOC容器中的类，那么IOC又是什么呢？稍后再做解析，Laravel框架里面含有N多个facades，平时极多人，不研究基层构造可能都不知道到底在哪里已经用到了它，有的人说Facades就像是Laravel的静态代理方法，为IOC容器中的类服务，但是在相比传统的静态方法，在保">
+<meta name="twitter:title" content="IOC容器、DI依赖注入、Facades解析容器">
+<meta name="twitter:description" content="facades是什么  Facades是一种设计模式，通常叫做外观模式，它提供了一个”static”静态接口去访问注册到IOC容器中的类，那么IOC又是什么呢？稍后再做解析，Laravel框架里面含有N多个facades，平时极多人，不研究基层构造可能都不知道到底在哪里已经用到了它，有的人说Facades就像是Laravel的静态代理方法，为IOC容器中的类服务，但是在相比传统的静态方法，在保持了">
 
     
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -48,7 +48,7 @@
 				<h1 class="site-name"><a href="/" title="Hexo">Hexo</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -64,7 +64,7 @@
  					
 						<form class="search" action="http://zn.baidu.com/cse/searchbox/" target="_blank">
 							<label>Search</label>
-						<input name="s" type="hidden" value= 4371549709810365400 ><input type="text" name="q" size="30" placeholder="搜索"><br>
+						<input name="s" type="hidden" value= 4371549709810365400 ><input type="text" name="q" size="30" placeholder="Search"><br>
 						</form>
 					
 					</li>
@@ -79,28 +79,28 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/11/29/laravel-facade/" title="Facades" itemprop="url">Facades</a>
+      <a href="/2016/11/29/laravel-facade/" title="IOC容器、DI依赖注入、Facades解析容器" itemprop="url">IOC容器、DI依赖注入、Facades解析容器</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="[object Object]" target="_blank" itemprop="author">[object Object]</a>
 		
   <p class="article-time">
-    <time datetime="2016-11-29T07:14:18.295Z" itemprop="datePublished"> 發表於 2016-11-29</time>
+    <time datetime="2016-11-29T10:00:00.000Z" itemprop="datePublished"> Published 2016-11-29</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目錄</strong>
+			<strong class="toc-title">Contents</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#facades是什么"><span class="toc-number">1.</span> <span class="toc-text">facades是什么</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IOC容器和DI是什么"><span class="toc-number">2.</span> <span class="toc-text">IOC容器和DI是什么</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Facades的说明"><span class="toc-number">3.</span> <span class="toc-text">Facades的说明</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建Facades"><span class="toc-number">4.</span> <span class="toc-text">创建Facades</span></a></li></ol>
 		
 		</div>
 		
-		<p>#facades是什么#<br>  Facades是一种设计模式，通常叫做外观模式，它提供了一个”static”静态接口去访问注册到IOC容器中的类，那么IOC又是什么呢？稍后再做解析，Laravel框架里面含有N多个facades，平时极多人，不研究基层构造可能都不知道到底在哪里已经用到了它，有的人说Facades就像是Laravel的静态代理方法，为IOC容器中的类服务，但是在相比传统的静态方法，在保持了更强的可测试性和灵活性的同时，它提供了更简洁，更富有表现力的语法。</p>
-<p>#IOC容器和DI是什么#<br> 大多数面向对象编程语言，在调用一个类的时候，先要实例化这个类，生成一个对象，如果你在写一个类，过程中要调用到很多的其他的类，那么可以想象的到要实例化多少次类，所以就出现了依赖注入到容器，容器IOC其实是一种设计模式，它也是个对象，你把某个类放入到这个容器中，可以解析出这个类的实例，所以依赖注入就是把所有依赖关系甚至没有的类放入到容器IOC里面，然后解析出这个类的实例。<br> 容器是个对象，Laravel有一个核心类，application,程序启动是时候就去实例化这个类，放到$app，这个类就是IOC容器，有了这个$app,你就可以把注册过的类的实例解析出来：  </p>
+		<h1 id="facades是什么"><a href="#facades是什么" class="headerlink" title="facades是什么"></a>facades是什么</h1><p>  Facades是一种设计模式，通常叫做外观模式，它提供了一个”static”静态接口去访问注册到IOC容器中的类，那么IOC又是什么呢？稍后再做解析，Laravel框架里面含有N多个facades，平时极多人，不研究基层构造可能都不知道到底在哪里已经用到了它，有的人说Facades就像是Laravel的静态代理方法，为IOC容器中的类服务，但是在相比传统的静态方法，在保持了更强的可测试性和灵活性的同时，它提供了更简洁，更富有表现力的语法。</p>
+<h1 id="IOC容器和DI是什么"><a href="#IOC容器和DI是什么" class="headerlink" title="IOC容器和DI是什么"></a>IOC容器和DI是什么</h1><p> 大多数面向对象编程语言，在调用一个类的时候，先要实例化这个类，生成一个对象，如果你在写一个类，过程中要调用到很多的其他的类，那么可以想象的到要实例化多少次类，所以就出现了依赖注入到容器，容器IOC其实是一种设计模式，它也是个对象，你把某个类放入到这个容器中，可以解析出这个类的实例，所以依赖注入就是把所有依赖关系甚至没有的类放入到容器IOC里面，然后解析出这个类的实例。<br> 容器是个对象，Laravel有一个核心类，application,程序启动是时候就去实例化这个类，放到$app，这个类就是IOC容器，有了这个$app,你就可以把注册过的类的实例解析出来：  </p>
 <pre><code>$fooBar = $app-&gt;make(&apos;FooBar&apos;);
 </code></pre><p> 那么你可能还会在想，这个FooBar是一个类吗？什么时候注册的呢，怎么就这注册到容器里面呢？这时候就用到了服务容器  </p>
 <pre><code>$this-&gt;app-&gt;singleton(&apos;FooBar&apos;, function($app){
@@ -162,7 +162,7 @@ $this-&gt;app-&gt;instance(&apos;FooBar&apos;, $fooBar);
 })；  
 Cache::get(&apos;key&apos;);
 </code></pre><p> 这种类似的静态方法的写法，其实不是PHP的静态方法调用，而是Facade。  </p>
-<p>#Facades的说明<br> 在Laravel应用程序中，facade是提供从容器中访问对象的类，上面讲到了，怎么把类绑定注册到容器里面，那么接下来该怎么访问了，Facade类实现了该机制，Laravel的faades，和其他自定义的Facades都需要继承基类Facade。<br> 但是在Facade类中，只需要实现一个方法：getFacadeAccesor，这个是什么方法呢，它是如何从容器中获取对象的，Facades基类构建了__callStatic()魔术方法来从facade延迟访问取得对象。因此当你使用facade调用，类似于Session::put，Laravel会从IOC容器取得Session管理类并调用get方法，在技术层上说，Laavel Facades是一种便捷的语法使用Laravel IOC容器作为服务定位器。  </p>
+<h1 id="Facades的说明"><a href="#Facades的说明" class="headerlink" title="Facades的说明"></a>Facades的说明</h1><p> 在Laravel应用程序中，facade是提供从容器中访问对象的类，上面讲到了，怎么把类绑定注册到容器里面，那么接下来该怎么访问了，Facade类实现了该机制，Laravel的faades，和其他自定义的Facades都需要继承基类Facade。<br> 但是在Facade类中，只需要实现一个方法：getFacadeAccesor，这个是什么方法呢，它是如何从容器中获取对象的，Facades基类构建了__callStatic()魔术方法来从facade延迟访问取得对象。因此当你使用facade调用，类似于Session::put，Laravel会从IOC容器取得Session管理类并调用get方法，在技术层上说，Laavel Facades是一种便捷的语法使用Laravel IOC容器作为服务定位器。  </p>
 <pre><code>$value = Cache::get(&apos;key&apos;);  
 </code></pre><p> 然后，如果我们查看Illuminate\Support\Facades\Session类，你会发现该类没有任何get静态方法：  </p>
 <pre><code>class Cache extends Facade {
@@ -170,7 +170,7 @@ Cache::get(&apos;key&apos;);
 }  
 </code></pre><p> Cache类继承了Facade这个基类，并且定义了一个getFacadeAccessor()方法，注意，该方法的工作是返回绑定到IOC的名字。<br> 当用户引用任何在Cache facade中的静态方法，Laravel从IOC容器绑定中取得cache，并且执行请求的对象方法<br> 所以我们的Cahe::get执行可以重写为：  </p>
 <pre><code>$value = $app-&gt;make(&apos;cache&apos;)-&gt;get(&apos;key&apos;)  
-</code></pre><p>#创建Facades<br> 如果要为自己的应用程序或者包创建一个facade是非常简单的，只要做三件事情，上面也分别针对每件事情做了讲解：  </p>
+</code></pre><h1 id="创建Facades"><a href="#创建Facades" class="headerlink" title="创建Facades"></a>创建Facades</h1><p> 如果要为自己的应用程序或者包创建一个facade是非常简单的，只要做三件事情，上面也分别针对每件事情做了讲解：  </p>
 <pre><code>1. IOC的绑定  
 2. facade类的解析  
 3. facade别名的配置  
@@ -210,13 +210,18 @@ class Payment extends Facade {
 <div class="article-catetags">
 
 
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/laravel-facades/">laravel facades</a>
+  </div>
+
 </div>
 
 
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2016/11/29/laravel-facade/" data-title="Facades | Hexo" data-tsina="5111832329" class="share clearfix">
+	  <div data-url="http://yoursite.com/2016/11/29/laravel-facade/" data-title="IOC容器、DI依赖注入、Facades解析容器 | Hexo" data-tsina="5111832329" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -242,7 +247,7 @@ class Payment extends Facade {
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/11/29/laravel-facade/" data-title="Facades" data-url="http://yoursite.com/2016/11/29/laravel-facade/"></div>
+	<div class="ds-thread" data-thread-key="2016/11/29/laravel-facade/" data-title="IOC容器、DI依赖注入、Facades解析容器" data-url="http://yoursite.com/2016/11/29/laravel-facade/"></div>
 </section>
 
 
@@ -253,22 +258,22 @@ class Payment extends Facade {
 </section>
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目錄</strong>
+  <strong class="toc-title">Contents</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#facades是什么"><span class="toc-number">1.</span> <span class="toc-text">facades是什么</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IOC容器和DI是什么"><span class="toc-number">2.</span> <span class="toc-text">IOC容器和DI是什么</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Facades的说明"><span class="toc-number">3.</span> <span class="toc-text">Facades的说明</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建Facades"><span class="toc-number">4.</span> <span class="toc-text">创建Facades</span></a></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
 <div class="github-card">
-<p class="asidetitle">Github 名片</p>
+<p class="asidetitle">Github Card</p>
 <div class="github-card" data-github="liuxiufang" data-width="220" data-height="119" data-theme="medium">
 <script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
 </div>
@@ -280,7 +285,7 @@ class Payment extends Facade {
 
   
 <div class="tagslist">
-	<p class="asidetitle">標簽</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			
@@ -312,13 +317,17 @@ class Payment extends Facade {
 			
 		
 			
+				<li><a href="/tags/laravel-facades/" title="laravel facades">laravel facades<sup>1</sup></a></li>
+			
+		
+			
 		
 		</ul>
 </div>
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情鏈接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -340,7 +349,7 @@ class Payment extends Facade {
 
 
   <div class="weiboshow">
-  <p class="asidetitle">新浪微博</p>
+  <p class="asidetitle">Weibo</p>
     <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=5111832329&verifier=3a5cfaa2&dpc=1"></iframe>
 </div>
 
@@ -603,7 +612,7 @@ var _hmt = _hmt || [];
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
