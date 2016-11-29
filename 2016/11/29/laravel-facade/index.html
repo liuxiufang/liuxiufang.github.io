@@ -4,26 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Hello World | Hexo</title>
+    <title>Facades | Hexo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="[object Object]">
     
 
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+    <meta name="description" content="#facades是什么#  Facades是一种设计模式，通常叫做外观模式，它提供了一个”static”静态接口去访问注册到IOC容器中的类，那么IOC又是什么呢？稍后再做解析，Laravel框架里面含有N多个facades，平时极多人，不研究基层构造可能都不知道到底在哪里已经用到了它，有的人说Facades就像是Laravel的静态代理方法，为IOC容器中的类服务，但是在相比传统的静态方法，在保">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2016/04/26/hello-world/index.html">
+<meta property="og:title" content="Facades">
+<meta property="og:url" content="http://yoursite.com/2016/11/29/laravel-facade/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-04-26T11:51:04.888Z">
+<meta property="og:description" content="#facades是什么#  Facades是一种设计模式，通常叫做外观模式，它提供了一个”static”静态接口去访问注册到IOC容器中的类，那么IOC又是什么呢？稍后再做解析，Laravel框架里面含有N多个facades，平时极多人，不研究基层构造可能都不知道到底在哪里已经用到了它，有的人说Facades就像是Laravel的静态代理方法，为IOC容器中的类服务，但是在相比传统的静态方法，在保">
+<meta property="og:updated_time" content="2016-11-29T11:34:52.519Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="Facades">
+<meta name="twitter:description" content="#facades是什么#  Facades是一种设计模式，通常叫做外观模式，它提供了一个”static”静态接口去访问注册到IOC容器中的类，那么IOC又是什么呢？稍后再做解析，Laravel框架里面含有N多个facades，平时极多人，不研究基层构造可能都不知道到底在哪里已经用到了它，有的人说Facades就像是Laravel的静态代理方法，为IOC容器中的类服务，但是在相比传统的静态方法，在保">
 
     
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -82,14 +79,14 @@ Quick">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/04/26/hello-world/" title="Hello World" itemprop="url">Hello World</a>
+      <a href="/2016/11/29/laravel-facade/" title="Facades" itemprop="url">Facades</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="[object Object]" target="_blank" itemprop="author">[object Object]</a>
 		
   <p class="article-time">
-    <time datetime="2016-04-26T11:41:04.139Z" itemprop="datePublished"> 發表於 2016-04-26</time>
+    <time datetime="2016-11-29T07:14:18.295Z" itemprop="datePublished"> 發表於 2016-11-29</time>
     
   </p>
 </header>
@@ -98,19 +95,115 @@ Quick">
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+			
 		
 		</div>
 		
-		<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+		<p>#facades是什么#<br>  Facades是一种设计模式，通常叫做外观模式，它提供了一个”static”静态接口去访问注册到IOC容器中的类，那么IOC又是什么呢？稍后再做解析，Laravel框架里面含有N多个facades，平时极多人，不研究基层构造可能都不知道到底在哪里已经用到了它，有的人说Facades就像是Laravel的静态代理方法，为IOC容器中的类服务，但是在相比传统的静态方法，在保持了更强的可测试性和灵活性的同时，它提供了更简洁，更富有表现力的语法。</p>
+<p>#IOC容器和DI是什么#<br> 大多数面向对象编程语言，在调用一个类的时候，先要实例化这个类，生成一个对象，如果你在写一个类，过程中要调用到很多的其他的类，那么可以想象的到要实例化多少次类，所以就出现了依赖注入到容器，容器IOC其实是一种设计模式，它也是个对象，你把某个类放入到这个容器中，可以解析出这个类的实例，所以依赖注入就是把所有依赖关系甚至没有的类放入到容器IOC里面，然后解析出这个类的实例。<br> 容器是个对象，Laravel有一个核心类，application,程序启动是时候就去实例化这个类，放到$app，这个类就是IOC容器，有了这个$app,你就可以把注册过的类的实例解析出来：  </p>
+<pre><code>$fooBar = $app-&gt;make(&apos;FooBar&apos;);
+</code></pre><p> 那么你可能还会在想，这个FooBar是一个类吗？什么时候注册的呢，怎么就这注册到容器里面呢？这时候就用到了服务容器  </p>
+<pre><code>$this-&gt;app-&gt;singleton(&apos;FooBar&apos;, function($app){
+    return new App\Lib\FooBar($app[&apos;SomethingElse]);
+});  
+</code></pre><p> 看见了吗？FooBar是类，App\Lib\FoorBar的别名，这个名字不固定可以任意起名字，只要把这个别名放入到容器里面，就可以解析出来一个实例；<br> 有时间感觉不就是实例一个类吗？怎么这个费劲呢，为什么不能用new呢，这时候就会关系到依赖了，new只是new指定的类，但是new不出来它所有的依赖，  </p>
+<pre><code>&lt;?php
+    namespace App\Http\Controllers;
+    use Illuminate\Routing\Controller;
+    use App\Users\Repository as UserRepository;
+    class UserController extends Controller
+    {
+        /**
+         * The user repository instance.
+         */
+
+        protected $users;
+
+        /**
+         * Create a new controller instance.
+         *
+         * @param  UserRepository  $users
+         * @return void
+         */
+        public function __construct(UserRepository $users)
+        {
+            $this-&gt;users = $users;
+        }
+        /**
+         * Show the user with the given ID.
+         *
+         * @param  int  $id
+         * @return Response
+         */
+        public function show($id)
+        {
+            //
+        }
+    }  
+</code></pre><p> 可以看到__construct(UserRepository $users)这个地方，这就是注入了一个UserRepository类，并且把实例的类赋给了$users，并不像平时用new实例化对象一样。<br>  上面也提到了怎么知道注册某个类到容器，是在service provider里面的register()，那么下面看看具体怎么注册的呢？有这几种方式：<br> 绑定多个例子：  </p>
+<pre><code>$this-&gt;app-&gt;bind(&apos;HelpSpot\API&apos;, function($app){
+    return new HelpSpot\API($app[&apos;HttpClient&apos;]);
+});  
+</code></pre><p> 绑定单例：  </p>
+<pre><code>$this-&gt;app-&gt;singleton(&apos;FooBar&apos;, function($app) {
+    return new FooBar($app[&apos;SomethingElse&apos;]);
+});
+</code></pre><p> 绑定一个实例：  </p>
+<pre><code>$fooBar = new FooBar(new SomethingElse);  
+$this-&gt;app-&gt;instance(&apos;FooBar&apos;, $fooBar);  
+</code></pre><p> 绑定接口并制定一个特定的实现： </p>
+<pre><code>$this-&gt;app-&gt;bind(&apos;App\Contracts\EventPusher&apos;, &apos;App\Services\RedisEventPusher&apos;);   
+</code></pre><p> 这时候该注意了，App\Contracts\EventPusher是一个php接口类，App\Services\RedisEventPusher是它对应的实现，这里你可能有问题了，这样丙丁我理解，但是怎么解析出来实现呢？  </p>
+<pre><code>$pusher = $app-&gt;make(&apos;App\Contracts\EventPusher&apos;);  
+</code></pre><p> 如果在类没有别名的情况下，把类的全称放进去就可以解析出来，如果有别名，就用别名。  </p>
+<p> 如何绑定注册到容器也说明了，那么跟Facades呢，下面来具体的说明一下Facade。  </p>
+<pre><code>Route::get(&apos;/&apos;, fucntion() {
+    return &apos;路由呀&apos;
+})；  
+Cache::get(&apos;key&apos;);
+</code></pre><p> 这种类似的静态方法的写法，其实不是PHP的静态方法调用，而是Facade。  </p>
+<p>#Facades的说明<br> 在Laravel应用程序中，facade是提供从容器中访问对象的类，上面讲到了，怎么把类绑定注册到容器里面，那么接下来该怎么访问了，Facade类实现了该机制，Laravel的faades，和其他自定义的Facades都需要继承基类Facade。<br> 但是在Facade类中，只需要实现一个方法：getFacadeAccesor，这个是什么方法呢，它是如何从容器中获取对象的，Facades基类构建了__callStatic()魔术方法来从facade延迟访问取得对象。因此当你使用facade调用，类似于Session::put，Laravel会从IOC容器取得Session管理类并调用get方法，在技术层上说，Laavel Facades是一种便捷的语法使用Laravel IOC容器作为服务定位器。  </p>
+<pre><code>$value = Cache::get(&apos;key&apos;);  
+</code></pre><p> 然后，如果我们查看Illuminate\Support\Facades\Session类，你会发现该类没有任何get静态方法：  </p>
+<pre><code>class Cache extends Facade {
+    protected static function getFacadeAccessor(){ return &apos;cache&apos; }
+}  
+</code></pre><p> Cache类继承了Facade这个基类，并且定义了一个getFacadeAccessor()方法，注意，该方法的工作是返回绑定到IOC的名字。<br> 当用户引用任何在Cache facade中的静态方法，Laravel从IOC容器绑定中取得cache，并且执行请求的对象方法<br> 所以我们的Cahe::get执行可以重写为：  </p>
+<pre><code>$value = $app-&gt;make(&apos;cache&apos;)-&gt;get(&apos;key&apos;)  
+</code></pre><p>#创建Facades<br> 如果要为自己的应用程序或者包创建一个facade是非常简单的，只要做三件事情，上面也分别针对每件事情做了讲解：  </p>
+<pre><code>1. IOC的绑定  
+2. facade类的解析  
+3. facade别名的配置  
+</code></pre><p> 如果我想弄个支付的程序，那么我们之前定义好了PaymentGatewap\Payment类。  </p>
+<pre><code>namespace PaymentGatewap;
+
+class Payment {
+
+    public function proccess()
+    {
+
+    }
+}
+</code></pre><p> 这个类可以放在任何Composer能够自动载入的位置,我们需要能够在IOC容器中取得该类，所以，让我们增加一个绑定：  </p>
+<pre><code>// 上面讲过绑定的几种方式  
+App::bind(&apos;payment&apos;, function()
+{
+
+    return new \PaymentGateway\Payment;
+
+});
+</code></pre><p> 最好注册该绑定的位置是创建一个新的名为PaymentServiceProvider服务提供器，并且将该绑定加入到 register 方法。接下来你就可以配置 Laravel app/config/app.php 配置文件来加载该服务提供器。<br> 接下来，我们就可以创建我们的 facade 类：  </p>
+<pre><code>use Illuminate\Support\Facades\Facade;
+
+class Payment extends Facade {
+
+    protected static function getFacadeAccessor() { return &apos;payment&apos;; }
+
+}
+</code></pre><p> 最后，如果你想，我们可以为我们 facade 设置一个别名到 app/config/app.php 配置文件里的 aliases 数组。现在，我们能够调用 Payment 类实例的 process 方法。  </p>
+<pre><code>Payment::process();
+</code></pre><p> 关于自动载入别名一些注意点：</p>
+<p> 在aliases数组中的有些类接口可能是不可行的，因为PHP不会尝试去自动载入未定义的类型约定。假设\ServiceWrapper\ApiTimeoutException别名是ApiTimeoutException， 如果catch(ApiTimeoutException $e) 是在\ServiceWrapper命名空间之外使用，它将会永远不会被捕获到, 即使真的有一个异常被抛出。 一个类似的问题存在在那些进行类型约定的别名类上。唯一的变通方法是摒弃别名，在每个你想使用类型约定的文件的开始的地方使用use。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -123,7 +216,7 @@ Quick">
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2016/04/26/hello-world/" data-title="Hello World | Hexo" data-tsina="5111832329" class="share clearfix">
+	  <div data-url="http://yoursite.com/2016/11/29/laravel-facade/" data-title="Facades | Hexo" data-tsina="5111832329" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -136,19 +229,11 @@ Quick">
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/05/08/git-rebase/" title="git rebase用法">
-  <strong>上一篇：</strong><br/>
-  <span>
-  git rebase用法</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/04/26/angular/"  title="理解angular中的$apply()以及 $digest()">
+<a href="/2016/11/20/cgi/"  title="cgi fastcgi php-fpm 关系式">
  <strong>下一篇：</strong><br/> 
- <span>理解angular中的$apply()以及 $digest()
+ <span>cgi fastcgi php-fpm 关系式
 </span>
 </a>
 </div>
@@ -157,7 +242,7 @@ Quick">
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/04/26/hello-world/" data-title="Hello World" data-url="http://yoursite.com/2016/04/26/hello-world/"></div>
+	<div class="ds-thread" data-thread-key="2016/11/29/laravel-facade/" data-title="Facades" data-url="http://yoursite.com/2016/11/29/laravel-facade/"></div>
 </section>
 
 
@@ -173,7 +258,7 @@ Quick">
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目錄</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+ 
  
   </div>
 
